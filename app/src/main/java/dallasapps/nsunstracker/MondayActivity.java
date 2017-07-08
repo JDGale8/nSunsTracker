@@ -13,6 +13,6 @@ public class MondayActivity extends AppCompatActivity {
 
 
         final Vibrator vibr = (Vibrator)getSystemService(VIBRATOR_SERVICE);
-        
+
     }
 }

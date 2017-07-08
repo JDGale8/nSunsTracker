@@ -19,6 +19,120 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Monday"
+            android:textSize="32dp" />
+
+
+        <!-- WEIGHT INFO -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal">
+
+            <!-- BENCH 1 RM LABELS-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bench1RMLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Bench 1RM" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/bench1RMEditNumber"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:ems="10"
+                        android:hint="135"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:id="@+id/lbsLabelOhp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="left|center_vertical"
+                        android:text="lbs" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- OHP 1RM LABELS-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/ohp1RMLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="OHP 1RM" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/ohp1RMEditNumber"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ems="10"
+                        android:hint="135"
+                        android:inputType="numberDecimal" />
+
+                    <TextView
+                        android:id="@+id/lbsLabelBench"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:text="lbs" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- DO WE NEED A THIRD DISPLAY?-->
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_weight="1">-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/textView4"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="TextView"-->
+            <!--android:layout_gravity="center_horizontal"/>-->
+            <!--</LinearLayout>-->
+        </LinearLayout>
+
 
         <!-- BENCH PRESS -->
         <LinearLayout
@@ -33,9 +147,9 @@
                 android:id="@+id/benchLabel"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:textSize="15dp"
+                android:layout_marginTop="12dp"
                 android:text="Bench Press"
-                android:layout_marginTop="12dp"/>
+                android:textSize="15dp" />
 
 
             <LinearLayout
@@ -51,28 +165,28 @@
 
 
                     <Button
-                        android:id="@+id/bench1"
+                        android:id="@+id/bench1Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="1" />
 
                     <Button
-                        android:id="@+id/bench2"
+                        android:id="@+id/bench2Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="2" />
 
                     <Button
-                        android:id="@+id/bench3"
+                        android:id="@+id/bench3Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="3" />
 
                     <Button
-                        android:id="@+id/bench4"
+                        android:id="@+id/bench4Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -87,44 +201,44 @@
                     android:layout_height="wrap_content">
 
                     <Button
-                        android:id="@+id/bench5"
+                        android:id="@+id/bench5Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:text="5" />
 
                     <Button
-                        android:id="@+id/bench6"
+                        android:id="@+id/bench6Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="6"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:text="6" />
 
                     <Button
-                        android:id="@+id/bench7"
+                        android:id="@+id/bench7Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:text="7" />
 
                     <Button
-                        android:id="@+id/bench8"
+                        android:id="@+id/bench8Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:text="8" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
             <Button
-                android:id="@+id/bench9"
+                android:id="@+id/bench9Btn"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:text="9"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                android:text="9" />
         </LinearLayout>
 
         <!-- OVERHEAD PRESS -->
@@ -159,28 +273,28 @@
 
 
                     <Button
-                        android:id="@+id/ohp1"
+                        android:id="@+id/ohp1Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="1" />
 
                     <Button
-                        android:id="@+id/ohp2"
+                        android:id="@+id/ohp2Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="2" />
 
                     <Button
-                        android:id="@+id/ohp3"
+                        android:id="@+id/ohp3Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="3" />
 
                     <Button
-                        android:id="@+id/ohp4"
+                        android:id="@+id/ohp4Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -195,14 +309,14 @@
                     android:layout_height="wrap_content">
 
                     <Button
-                        android:id="@+id/ohp5"
+                        android:id="@+id/ohp5Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="5" />
 
                     <Button
-                        android:id="@+id/ohp6"
+                        android:id="@+id/ohp6Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -210,14 +324,14 @@
                         android:text="6" />
 
                     <Button
-                        android:id="@+id/ohp7"
+                        android:id="@+id/ohp7Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="7" />
 
                     <Button
-                        android:id="@+id/ohp8"
+                        android:id="@+id/ohp8Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -232,6 +346,14 @@
         </LinearLayout>
     </LinearLayout>
 
+    <Button
+        android:id="@+id/addAccessoryBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/mainVerticalLayout"
+        android:text="+Accessory" />
 
 
 </RelativeLayout>

@@ -9,12 +9,12 @@ package dallasapps.nsunstracker.util;
  * calculates weights for each set
  * if kg is true, round to nearest 2.5, if kg is false, we're in lbs and round to nearest 5
  */
-public class weightCalculator {
+public class WeightCalculator {
 
     private boolean isKg;
     private double roundingFactor;
 
-    weightCalculator(boolean isKg) {
+    public WeightCalculator(boolean isKg) {
         calculateRoundingFactor();
     }
 
@@ -32,7 +32,7 @@ public class weightCalculator {
         calculateRoundingFactor();
     }
 
-    public double calculateBench1(double oneRepMax, boolean kg) {
+    public double calculateBench1(double oneRepMax) {
         return (oneRepMax *  0.65) / roundingFactor * roundingFactor;
     }
     public double calculateBench2(double oneRepMax) {

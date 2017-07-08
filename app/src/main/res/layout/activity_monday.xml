@@ -63,7 +63,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:ems="10"
-                        android:hint="135"
+                        android:hint="---"
+                        android:gravity="center_horizontal"
                         android:inputType="numberDecimal" />
 
                     <TextView
@@ -102,7 +103,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:ems="10"
-                        android:hint="135"
+                        android:hint="---"
+                        android:gravity="center_horizontal"
                         android:inputType="numberDecimal" />
 
                     <TextView

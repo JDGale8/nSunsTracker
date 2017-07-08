@@ -1,10 +1,16 @@
 package dallasapps.nsunstracker;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
+
+import dallasapps.nsunstracker.util.WeightCalculator;
 
 /**
  * Controller class for Monday nSuns 4
@@ -19,15 +25,92 @@ import android.widget.EditText;
  */
 public class MondayActivity extends AppCompatActivity {
 
+    private static final String ONE_REP_MAX_PREFS = "oneRepMaxes";
+    private double benchOneRepMax = 0;
+    private double ohpOneRepMax = 0;
+    private boolean isKg = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monday);
 
+//        Context context = getActivity();
 
-        final Vibrator vibr = (Vibrator)getSystemService(VIBRATOR_SERVICE);
+
+        final Vibrator vibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         // INITIATE BUTTONS
+        final Button addAccessoryBtn = (Button) findViewById(R.id.addAccessoryBtn);
+
+        final EditText bench1RMEditText = (EditText) findViewById(R.id.bench1RMEditNumber);
+        final EditText ohp1RMEditText = (EditText) findViewById(R.id.ohp1RMEditNumber);
+
+        final WeightCalculator weightCalc = new WeightCalculator(isKg);
+
+        set1RmsFromSharedPrefs();
+
+        setBenchRepWeights(benchOneRepMax, weightCalc);
+        setOhpRepWeights(ohpOneRepMax, weightCalc);
+
+        bench1RMEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                setBenchRepWeights(Double.parseDouble(editable.toString()), weightCalc);
+            }
+        });
+
+        ohp1RMEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                setOhpRepWeights(Double.parseDouble(editable.toString()), weightCalc);
+            }
+        });
+
+    }
+
+
+
+    private void set1RmsFromSharedPrefs() {
+        final EditText bench1RMEditText = (EditText) findViewById(R.id.bench1RMEditNumber);
+        final EditText ohp1RMEditText = (EditText) findViewById(R.id.ohp1RMEditNumber);
+
+        SharedPreferences sharedPref = getSharedPreferences(ONE_REP_MAX_PREFS, MODE_PRIVATE);
+        if (sharedPref == null) {
+            return;
+        }
+        String bench1RM = sharedPref.getString("bench1RM", null);
+        String ohp1RM = sharedPref.getString("ohp1RM", null);
+
+        if (bench1RM != null) {
+            bench1RMEditText.setText(bench1RM);
+        }
+        if (ohp1RM != null) {
+            ohp1RMEditText.setText(ohp1RM);
+        }
+    }
+
+    private void setBenchRepWeights(double oneRepMax, WeightCalculator weightCalc) {
 
         final Button bench1Btn = (Button) findViewById(R.id.bench1Btn);
         final Button bench2Btn = (Button) findViewById(R.id.bench2Btn);
@@ -38,6 +121,21 @@ public class MondayActivity extends AppCompatActivity {
         final Button bench7Btn = (Button) findViewById(R.id.bench7Btn);
         final Button bench8Btn = (Button) findViewById(R.id.bench8Btn);
         final Button bench9Btn = (Button) findViewById(R.id.bench9Btn);
+        if (oneRepMax > 0) {
+            bench1Btn.setText(String.format("%s\nx8", weightCalc.calculateBench1(oneRepMax)));
+            bench2Btn.setText(String.format("%s\nx6", weightCalc.calculateBench2(oneRepMax)));
+            bench3Btn.setText(String.format("%s\nx4", weightCalc.calculateBench3(oneRepMax)));
+            bench4Btn.setText(String.format("%s\nx4", weightCalc.calculateBench4(oneRepMax)));
+            bench5Btn.setText(String.format("%s\nx4", weightCalc.calculateBench5(oneRepMax)));
+            bench6Btn.setText(String.format("%s\nx5", weightCalc.calculateBench6(oneRepMax)));
+            bench7Btn.setText(String.format("%s\nx6", weightCalc.calculateBench7(oneRepMax)));
+            bench8Btn.setText(String.format("%s\nx7", weightCalc.calculateBench8(oneRepMax)));
+            bench9Btn.setText(String.format("%s\nx8+", weightCalc.calculateBench9(oneRepMax)));
+        }
+
+    }
+
+    private void setOhpRepWeights(double oneRepMax, WeightCalculator weightCalc) {
 
         final Button ohp1Btn = (Button) findViewById(R.id.ohp1Btn);
         final Button ohp2Btn = (Button) findViewById(R.id.ohp2Btn);
@@ -48,13 +146,15 @@ public class MondayActivity extends AppCompatActivity {
         final Button ohp7Btn = (Button) findViewById(R.id.ohp7Btn);
         final Button ohp8Btn = (Button) findViewById(R.id.ohp8Btn);
 
-        final Button addAccessoryBtn = (Button) findViewById(R.id.addAccessoryBtn);
-
-        final EditText bench1RM = (EditText) findViewById(R.id.bench1RMEditNumber);
-        final EditText ohp1RM = (EditText) findViewById(R.id.ohp1RMEditNumber);
-
-
-
-
+        if (oneRepMax > 0) {
+            ohp1Btn.setText(String.format("%s\nx6", weightCalc.calculateOhp1(oneRepMax)));
+            ohp2Btn.setText(String.format("%s\nx5", weightCalc.calculateOhp2(oneRepMax)));
+            ohp3Btn.setText(String.format("%s\nx3", weightCalc.calculateOhp3(oneRepMax)));
+            ohp4Btn.setText(String.format("%s\nx5", weightCalc.calculateOhp4(oneRepMax)));
+            ohp5Btn.setText(String.format("%s\nx7", weightCalc.calculateOhp5(oneRepMax)));
+            ohp6Btn.setText(String.format("%s\nx4", weightCalc.calculateOhp6(oneRepMax)));
+            ohp7Btn.setText(String.format("%s\nx6", weightCalc.calculateOhp7(oneRepMax)));
+            ohp8Btn.setText(String.format("%s\nx8", weightCalc.calculateOhp8(oneRepMax)));
+        }
     }
 }

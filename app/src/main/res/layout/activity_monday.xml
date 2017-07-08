@@ -23,10 +23,10 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="Monday"
-            android:textSize="32dp" />
-
+            android:textSize="32sp" />
 
         <!-- WEIGHT INFO -->
 
@@ -38,47 +38,6 @@
             android:orientation="horizontal">
 
             <!-- BENCH 1 RM LABELS-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/bench1RMLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Bench 1RM" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/bench1RMEditNumber"
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:ems="10"
-                        android:hint="@string/noNumber"
-                        android:maxLength="3"
-                        android:gravity="center_horizontal"
-                        android:inputType="numberDecimal" />
-
-                    <TextView
-                        android:id="@+id/lbsLabelOhp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="left|center_vertical"
-                        android:text="lbs" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <!-- OHP 1RM LABELS-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -104,10 +63,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:ems="10"
-                        android:hint="@string/noNumber"
-                        android:maxLength="3"
                         android:gravity="center_horizontal"
-                        android:inputType="numberDecimal" />
+                        android:hint="@string/noNumber"
+                        android:inputType="numberDecimal"
+                        android:maxLength="3" />
 
                     <TextView
                         android:id="@+id/lbsLabelBench"
@@ -116,9 +75,53 @@
                         android:layout_weight="1"
                         android:gravity="left|center_vertical"
                         android:text="lbs" />
+
                 </LinearLayout>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bench1RMLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Bench 1RM" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/bench1RMEditNumber"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:ems="10"
+                        android:gravity="center_horizontal"
+                        android:hint="@string/noNumber"
+                        android:inputType="numberDecimal"
+                        android:maxLength="3" />
+
+                    <TextView
+                        android:id="@+id/lbsLabelOhp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="left|center_vertical"
+                        android:text="lbs" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- OHP 1RM LABELS-->
 
 
             <!-- DO WE NEED A THIRD DISPLAY?-->
@@ -251,6 +254,7 @@
             android:id="@+id/ohpHorizontalLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:orientation="horizontal">
 
             <!-- FIRST ROW -->

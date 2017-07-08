@@ -1,4 +1,4 @@
-package dallasapps.nsunstracker;
+package dallasapps.nsunstracker.activities;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 
+import dallasapps.nsunstracker.R;
 import dallasapps.nsunstracker.util.WeightCalculator;
 
 /**

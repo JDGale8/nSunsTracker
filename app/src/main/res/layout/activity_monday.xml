@@ -14,47 +14,94 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/mainVerticalLayout">
+        android:id="@+id/mainVerticalLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-        <GridLayout
+        <LinearLayout
+            android:id="@+id/benchLinearLayoutTop"
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:id="@+id/benchGridLayout"
-            android:columnCount="7">
+            android:orientation="horizontal">
 
             <TextView
-                android:text="Bench Press"
-                android:layout_width="wrap_content"
+                android:id="@+id/benchLabel"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/benchLabel"/>
+                android:text="Bench Press" />
 
             <Button
+                android:id="@+id/bench1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
-                android:id="@+id/bench1"/>
+                android:layout_weight="1"
+                android:text="1" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
                 android:id="@+id/bench2"
-                android:layout_gravity="center_horizontal"/>
-
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3"
-                android:id="@+id/bench3"/>
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="2" />
 
             <Button
+                android:id="@+id/bench3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4"
-                android:id="@+id/bench4"/>
+                android:layout_weight="1"
+                android:text="3" />
 
-        </GridLayout>
+            <Button
+                android:id="@+id/bench4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/benchLinearLayoutBot"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/bench5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/bench6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/bench7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3" />
+
+            <Button
+                android:id="@+id/bench8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="4" />
+
+        </LinearLayout>
 
         <GridLayout
             android:layout_width="match_parent"

@@ -63,7 +63,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:ems="10"
-                        android:hint="---"
+                        android:hint="@string/noNumber"
+                        android:maxLength="3"
                         android:gravity="center_horizontal"
                         android:inputType="numberDecimal" />
 
@@ -103,7 +104,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:ems="10"
-                        android:hint="---"
+                        android:hint="@string/noNumber"
+                        android:maxLength="3"
                         android:gravity="center_horizontal"
                         android:inputType="numberDecimal" />
 
@@ -141,6 +143,7 @@
             android:id="@+id/benchHorizontalLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:orientation="horizontal">
 
             <!-- FIRST ROW -->

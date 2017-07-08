@@ -21,71 +21,284 @@
         android:layout_alignParentStart="true">
 
 
+        <TextView
+            android:id="@+id/oneRMLabels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            android:text="One Rep Maxes" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/Bench1RMCard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="140dp"
                 android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
                 card_view:cardCornerRadius="4dp">
 
-                <TextView
-                    android:id="@+id/bench1RMInfo"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/bench1RMInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="Bench" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/minusBench"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
+                            android:text="@string/minusBtnText" />
+
+                        <EditText
+                            android:id="@+id/bench1RMAmount"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:hint="@string/noNumber"
+                            android:textSize="30sp" />
+
+                         <Button
+                            android:id="@+id/plusBench"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                             android:background="@android:color/transparent"
+                             android:layout_gravity="center_vertical"
+                            android:text="@string/plusBtnText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:id="@+id/ohp1RMCard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="140dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
                 android:layout_gravity="center"
                 card_view:cardCornerRadius="4dp">
 
-                <TextView
-                    android:id="@+id/ohp1RMInfo"
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ohp1RMInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="Overhead Press" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/minusOHP"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
+                            android:text="@string/minusBtnText" />
+
+                        <EditText
+                            android:id="@+id/ohp1RMAmount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:hint="@string/noNumber"
+                            android:textSize="30sp" />
+
+                        <Button
+                            android:id="@+id/plusOHP"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
+                            android:text="@string/plusBtnText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </android.support.v7.widget.CardView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/squat1RMCard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="140dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
                 android:layout_gravity="center"
                 card_view:cardCornerRadius="4dp">
 
-                <TextView
-                    android:id="@+id/squat1RMInfo"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/squat1RMInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="Squat" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/minusSquat"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
+                            android:text="@string/minusBtnText" />
+
+                        <EditText
+                            android:id="@+id/squat1RMAmount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:hint="@string/noNumber"
+                            android:textSize="30sp" />
+
+                        <Button
+                            android:id="@+id/plusSquat"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
+                            android:text="@string/plusBtnText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:id="@+id/deadLift1RMCard"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="140dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
                 android:layout_gravity="center"
                 card_view:cardCornerRadius="4dp">
 
-                <TextView
-                    android:id="@+id/deadLift1RMInfo"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/deadLift1RMInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="18sp"
+                        android:text="Deadlift" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/minusDeadlift"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
+                            android:text="@string/minusBtnText" />
+
+                        <EditText
+                            android:id="@+id/deadLift1RMAmount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:gravity="center"
+                            android:hint="@string/noNumber"
+                            android:textSize="30sp" />
+
+                        <Button
+                            android:id="@+id/plusDeadlift"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:background="@android:color/transparent"
+                            android:text="@string/plusBtnText" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
             </android.support.v7.widget.CardView>
         </LinearLayout>
 
 
     </LinearLayout>
+
 </RelativeLayout>

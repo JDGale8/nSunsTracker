@@ -3,4 +3,6 @@
     <string name="noNumber">---</string>
     <string name="bench1RMStr">bench1RM</string>
     <string name="ohp1RMStr">ohp1RM</string>
+    <string name="plusBtnText">+</string>
+    <string name="minusBtnText">-</string>
 </resources>

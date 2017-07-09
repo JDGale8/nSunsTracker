@@ -95,7 +95,8 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
-                            android:text="@string/minusBtnText" />
+                            android:text="@string/minusBtnText"
+                            android:onClick="decreaseBench"/>
 
                         <EditText
                             android:id="@+id/bench1RMAmount"
@@ -113,9 +114,10 @@
                             android:id="@+id/plusBench"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                             android:background="@android:color/transparent"
-                             android:layout_gravity="center_vertical"
-                            android:text="@string/plusBtnText" />
+                            android:background="@android:color/transparent"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/plusBtnText"
+                            android:onClick="increaseBench"/>
 
                     </LinearLayout>
 
@@ -159,7 +161,8 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
-                            android:text="@string/minusBtnText" />
+                            android:text="@string/minusBtnText"
+                            android:onClick="decreaseOhp"/>
 
                         <EditText
                             android:id="@+id/ohp1RMAmount"
@@ -179,7 +182,8 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
-                            android:text="@string/plusBtnText" />
+                            android:text="@string/plusBtnText"
+                            android:onClick="increaseOhp"/>
 
                     </LinearLayout>
 

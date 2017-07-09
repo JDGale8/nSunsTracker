@@ -5,4 +5,9 @@
     <string name="ohp1RMStr">ohp1RM</string>
     <string name="plusBtnText">+</string>
     <string name="minusBtnText">-</string>
+    <string name="oneRepMaxPrefKey">oneRepMaxPrefs</string>
+    <string name="squat1RMStr">squatORM</string>
+    <string name="deadlift1RMStr">deadliftORM</string>
+    <string name="generalPrefKey">general prefs</string>
+    <string name="isKGStr">isKG</string>
 </resources>

@@ -26,7 +26,6 @@ import dallasapps.nsunstracker.util.WeightCalculator;
  */
 public class MondayActivity extends AppCompatActivity {
 
-    private static final String ONE_REP_MAX_PREFS = "oneRepMaxes";
     private double benchOneRepMax = 0;
     private double ohpOneRepMax = 0;
     private boolean isKg = false;
@@ -35,9 +34,6 @@ public class MondayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_monday);
-
-//        Context context = getActivity();
-
 
         final Vibrator vibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
@@ -102,7 +98,7 @@ public class MondayActivity extends AppCompatActivity {
         final EditText bench1RMEditText = (EditText) findViewById(R.id.bench1RMEditNumber);
         final EditText ohp1RMEditText = (EditText) findViewById(R.id.ohp1RMEditNumber);
 
-        SharedPreferences sharedPref = getSharedPreferences(ONE_REP_MAX_PREFS, MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.oneRepMaxPrefKey), MODE_PRIVATE);
         if (sharedPref == null) {
             return;
         }
@@ -193,12 +189,12 @@ public class MondayActivity extends AppCompatActivity {
     }
 
     public void setBenchRepMaxPref(String benchRepMax) {
-        SharedPreferences.Editor sharedPrefEditor = getSharedPreferences(ONE_REP_MAX_PREFS, MODE_PRIVATE).edit();
+        SharedPreferences.Editor sharedPrefEditor = getSharedPreferences(getString(R.string.oneRepMaxPrefKey), MODE_PRIVATE).edit();
         sharedPrefEditor.putString(getString(R.string.bench1RMStr), benchRepMax);
         sharedPrefEditor.apply();
     }
     public void setOhpRepMaxPref(String ohpRepMax) {
-        SharedPreferences.Editor sharedPrefEditor = getSharedPreferences(ONE_REP_MAX_PREFS, MODE_PRIVATE).edit();
+        SharedPreferences.Editor sharedPrefEditor = getSharedPreferences(getString(R.string.oneRepMaxPrefKey), MODE_PRIVATE).edit();
         sharedPrefEditor.putString(getString(R.string.ohp1RMStr), ohpRepMax);
         sharedPrefEditor.apply();
     }

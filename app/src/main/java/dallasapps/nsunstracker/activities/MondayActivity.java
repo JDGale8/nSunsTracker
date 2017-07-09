@@ -98,7 +98,7 @@ public class MondayActivity extends AppCompatActivity {
         final EditText bench1RMEditText = (EditText) findViewById(R.id.bench1RMEditNumber);
         final EditText ohp1RMEditText = (EditText) findViewById(R.id.ohp1RMEditNumber);
 
-        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.oneRepMaxPrefKey), MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.oneRepMaxPrefKey), 0);
         if (sharedPref == null) {
             return;
         }
@@ -189,13 +189,15 @@ public class MondayActivity extends AppCompatActivity {
     }
 
     public void setBenchRepMaxPref(String benchRepMax) {
-        SharedPreferences.Editor sharedPrefEditor = getSharedPreferences(getString(R.string.oneRepMaxPrefKey), MODE_PRIVATE).edit();
+        SharedPreferences.Editor sharedPrefEditor = getSharedPreferences(getString(R.string.oneRepMaxPrefKey), 0).edit();
         sharedPrefEditor.putString(getString(R.string.bench1RMStr), benchRepMax);
         sharedPrefEditor.apply();
+        sharedPrefEditor.commit();
     }
     public void setOhpRepMaxPref(String ohpRepMax) {
-        SharedPreferences.Editor sharedPrefEditor = getSharedPreferences(getString(R.string.oneRepMaxPrefKey), MODE_PRIVATE).edit();
+        SharedPreferences.Editor sharedPrefEditor = getSharedPreferences(getString(R.string.oneRepMaxPrefKey), 0).edit();
         sharedPrefEditor.putString(getString(R.string.ohp1RMStr), ohpRepMax);
         sharedPrefEditor.apply();
+        sharedPrefEditor.commit();
     }
 }

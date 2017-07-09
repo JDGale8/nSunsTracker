@@ -232,6 +232,7 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
+                            android:onClick="decreaseSquat"
                             android:text="@string/minusBtnText" />
 
                         <EditText
@@ -252,6 +253,7 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
+                            android:onClick="increaseSquat"
                             android:text="@string/plusBtnText" />
 
                     </LinearLayout>
@@ -296,6 +298,7 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
+                            android:onClick="decreaseDeadlift"
                             android:text="@string/minusBtnText" />
 
                         <EditText
@@ -316,6 +319,7 @@
                             android:layout_height="40dp"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
+                            android:onClick="increaseDeadlift"
                             android:text="@string/plusBtnText" />
 
                     </LinearLayout>

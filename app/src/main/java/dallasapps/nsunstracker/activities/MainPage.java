@@ -22,31 +22,37 @@ public class MainPage extends AppCompatActivity {
 
     private boolean isKg;
 
+    private EditText benchORMEditText;
+    private EditText ohpORMEditText;
+    private EditText squatORMEditText;
+    private EditText deadliftORMEditText;
 
-    final Button changeDayProgramBtn = (Button) findViewById(R.id.changeDaysBtn);
-    final Button startWorkoutBtn = (Button) findViewById(R.id.startWorkoutBtn);
-
-    final Button plusBenchBtn = (Button) findViewById(R.id.plusBench);
-    final Button minusBenchBtn = (Button) findViewById(R.id.minusBench);
-    final Button plusOhpBtn = (Button) findViewById(R.id.plusOHP);
-    final Button minusOhpBtn = (Button) findViewById(R.id.minusOHP);
-    final Button plusSquatBtn = (Button) findViewById(R.id.plusSquat);
-    final Button minusSquatBtn = (Button) findViewById(R.id.minusSquat);
-    final Button plusDeadliftBtn = (Button) findViewById(R.id.plusDeadlift);
-    final Button minusDeadliftBtn = (Button) findViewById(R.id.minusDeadlift);
-
-    final EditText benchORMEditText = (EditText) findViewById(R.id.bench1RMAmount);
-    final EditText ohpORMEditText = (EditText) findViewById(R.id.ohp1RMAmount);
-    final EditText squatORMEditText = (EditText) findViewById(R.id.squat1RMAmount);
-    final EditText deadliftORMEditText = (EditText) findViewById(R.id.deadLift1RMAmount);
-
-    final Vibrator vibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+    private Vibrator vibr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
+        final Button changeDayProgramBtn = (Button) findViewById(R.id.changeDaysBtn);
+        final Button startWorkoutBtn = (Button) findViewById(R.id.startWorkoutBtn);
+
+        final Button plusBenchBtn = (Button) findViewById(R.id.plusBench);
+        final Button minusBenchBtn = (Button) findViewById(R.id.minusBench);
+        final Button plusOhpBtn = (Button) findViewById(R.id.plusOHP);
+        final Button minusOhpBtn = (Button) findViewById(R.id.minusOHP);
+        final Button plusSquatBtn = (Button) findViewById(R.id.plusSquat);
+        final Button minusSquatBtn = (Button) findViewById(R.id.minusSquat);
+        final Button plusDeadliftBtn = (Button) findViewById(R.id.plusDeadlift);
+        final Button minusDeadliftBtn = (Button) findViewById(R.id.minusDeadlift);
+
+        benchORMEditText = (EditText) findViewById(R.id.bench1RMAmount);
+        ohpORMEditText = (EditText) findViewById(R.id.ohp1RMAmount);
+        squatORMEditText = (EditText) findViewById(R.id.squat1RMAmount);
+        deadliftORMEditText = (EditText) findViewById(R.id.deadLift1RMAmount);
+
+        vibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         getSharedPrefs();
     }
 
@@ -63,6 +69,12 @@ public class MainPage extends AppCompatActivity {
         }
         if (sharedGeneralPrefs != null) {
             this.isKg = sharedGeneralPrefs.getBoolean(getString(R.string.isKGStr), false);
+            if(isKg) {
+                this.incAmount = 2.5;
+            }
+            else {
+                this.incAmount = 5;
+            }
         }
     }
 
@@ -84,49 +96,98 @@ public class MainPage extends AppCompatActivity {
     }
 
     public void increaseBench(View view) {
-        if (benchORMEditText.toString().equals("")) {
+        if (benchORMEditText.getText().toString().equals("")) {
             benchORMEditText.setText("10");
         }
         else {
-            double benchORMDouble = Double.parseDouble(benchORMEditText.toString());
+            double benchORMDouble = Double.parseDouble(benchORMEditText.getText().toString());
             benchORMEditText.setText(String.format("%s",benchORMDouble + incAmount));
         }
     }
 
     public void decreaseBench(View view) {
-        if (benchORMEditText.toString().equals("")) {
+        if (benchORMEditText.getText().toString().equals("")) {
             vibr.vibrate(30);
         }
-        else if (Double.parseDouble(ohpORMEditText.toString()) < incAmount) {
-            ohpORMEditText.setText("");
+        else if (Double.parseDouble(benchORMEditText.getText().toString()) < incAmount) {
+            benchORMEditText.setText("");
         }
         else {
-            double benchORMDouble = Double.parseDouble(benchORMEditText.toString());
-            benchORMEditText.setText(String.format("%s",benchORMDouble - incAmount));
+            double ohpORMDouble = Double.parseDouble(benchORMEditText.getText().toString());
+            benchORMEditText.setText(String.format("%s",ohpORMDouble - incAmount));
         }
     }
 
 
     public void increaseOhp(View view) {
-        if (ohpORMEditText.toString().equals("")) {
+        if (ohpORMEditText.getText().toString().equals("")) {
             ohpORMEditText.setText("10");
         }
         else {
-            double ohpORMDouble = Double.parseDouble(ohpORMEditText.toString());
+            double ohpORMDouble = Double.parseDouble(ohpORMEditText.getText().toString());
             ohpORMEditText.setText(String.format("%s",ohpORMDouble + incAmount));
         }
     }
 
     public void decreaseOhp(View view) {
-        if (ohpORMEditText.toString().equals("")) {
+        if (ohpORMEditText.getText().toString().equals("")) {
             vibr.vibrate(30);
         }
-        else if (Double.parseDouble(ohpORMEditText.toString()) < incAmount) {
+        else if (Double.parseDouble(ohpORMEditText.getText().toString()) < incAmount) {
             ohpORMEditText.setText("");
         }
         else {
-            double ohpORMDouble = Double.parseDouble(ohpORMEditText.toString());
+            double ohpORMDouble = Double.parseDouble(ohpORMEditText.getText().toString());
             ohpORMEditText.setText(String.format("%s",ohpORMDouble - incAmount));
+        }
+    }
+
+
+
+    public void increaseSquat(View view) {
+        if (squatORMEditText.getText().toString().equals("")) {
+            squatORMEditText.setText("10");
+        }
+        else {
+            double squatORMDouble = Double.parseDouble(squatORMEditText.getText().toString());
+            squatORMEditText.setText(String.format("%s",squatORMDouble + incAmount));
+        }
+    }
+
+    public void decreaseSquat(View view) {
+        if (squatORMEditText.getText().toString().equals("")) {
+            vibr.vibrate(30);
+        }
+        else if (Double.parseDouble(squatORMEditText.getText().toString()) < incAmount) {
+            squatORMEditText.setText("");
+        }
+        else {
+            double squatORMDouble = Double.parseDouble(squatORMEditText.getText().toString());
+            squatORMEditText.setText(String.format("%s",squatORMDouble - incAmount));
+        }
+    }
+
+
+    public void increaseDeadlift(View view) {
+        if (deadliftORMEditText.getText().toString().equals("")) {
+            deadliftORMEditText.setText("10");
+        }
+        else {
+            double deadliftORMDouble = Double.parseDouble(deadliftORMEditText.getText().toString());
+            deadliftORMEditText.setText(String.format("%s",deadliftORMDouble + incAmount));
+        }
+    }
+
+    public void decreaseDeadlift(View view) {
+        if (deadliftORMEditText.getText().toString().equals("")) {
+            vibr.vibrate(30);
+        }
+        else if (Double.parseDouble(deadliftORMEditText.getText().toString()) < incAmount) {
+            deadliftORMEditText.setText("");
+        }
+        else {
+            double deadliftORMDouble = Double.parseDouble(deadliftORMEditText.getText().toString());
+            deadliftORMEditText.setText(String.format("%s",deadliftORMDouble - incAmount));
         }
     }
 

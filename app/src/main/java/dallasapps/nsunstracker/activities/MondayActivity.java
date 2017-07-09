@@ -46,7 +46,6 @@ public class MondayActivity extends AppCompatActivity {
         final WeightCalculator weightCalc = new WeightCalculator(isKg);
 
         set1RmsFromSharedPrefs();
-
         setBenchRepWeights(benchOneRepMax, weightCalc);
         setOhpRepWeights(ohpOneRepMax, weightCalc);
 
@@ -111,6 +110,7 @@ public class MondayActivity extends AppCompatActivity {
             }
             else {
                 bench1RMEditText.setText(bench1RM);
+                this.benchOneRepMax = Double.parseDouble(bench1RM);
             }
         }
         if (ohp1RM != null) {
@@ -119,6 +119,7 @@ public class MondayActivity extends AppCompatActivity {
             }
             else {
                 ohp1RMEditText.setText(ohp1RM);
+                this.ohpOneRepMax = Double.parseDouble(ohp1RM);
             }
         }
     }

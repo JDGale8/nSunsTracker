@@ -106,10 +106,20 @@ public class MondayActivity extends AppCompatActivity {
         String ohp1RM = sharedPref.getString(getString(R.string.ohp1RMStr), null);
 
         if (bench1RM != null) {
-            bench1RMEditText.setText(bench1RM);
+            if (bench1RM.equals("0.0")) {
+                bench1RMEditText.setText(bench1RM);
+            }
+            else {
+                bench1RMEditText.setText(bench1RM);
+            }
         }
         if (ohp1RM != null) {
-            ohp1RMEditText.setText(ohp1RM);
+            if (ohp1RM.equals("0.0")) {
+                ohp1RMEditText.setText("");
+            }
+            else {
+                ohp1RMEditText.setText(ohp1RM);
+            }
         }
     }
 

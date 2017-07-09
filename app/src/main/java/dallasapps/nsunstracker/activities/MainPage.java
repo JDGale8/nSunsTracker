@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import dallasapps.nsunstracker.R;
 
+import static dallasapps.nsunstracker.util.StringFormatter.formatWeight;
+
 public class MainPage extends AppCompatActivity {
 
-    private static final String ONE_REP_MAX_PREFS = "";
     private double incAmount;
 
     private String benchORM;
@@ -21,7 +23,8 @@ public class MainPage extends AppCompatActivity {
     private String squatORM;
     private String deadliftORM;
 
-    private boolean isKg;
+    private boolean isKg = false;
+    private String weightUnit;
 
     private EditText benchORMEditText;
     private EditText ohpORMEditText;
@@ -56,6 +59,8 @@ public class MainPage extends AppCompatActivity {
         vibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         getSharedPrefs();
         setORMAmounts();
+        setWeightUnits();
+
 
         startWorkoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +70,18 @@ public class MainPage extends AppCompatActivity {
                 vibr.vibrate(28);
             }
         });
+    }
+
+    private void setWeightUnits() {
+        TextView benchUnit = (TextView) findViewById(R.id.benchUnit);
+        TextView ohpUnit = (TextView) findViewById(R.id.ohpUnit);
+        TextView squatUnit = (TextView) findViewById(R.id.squatUnit);
+        TextView deadliftUnit = (TextView) findViewById(R.id.deadliftUnit);
+
+        benchUnit.setText(weightUnit);
+        ohpUnit.setText(weightUnit);
+        squatUnit.setText(weightUnit);
+        deadliftUnit.setText(weightUnit);
     }
 
     @Override
@@ -87,11 +104,12 @@ public class MainPage extends AppCompatActivity {
         }
         if (sharedGeneralPrefs != null) {
             this.isKg = sharedGeneralPrefs.getBoolean(getString(R.string.isKGStr), false);
-            if(isKg) {
+            if (isKg) {
                 this.incAmount = 2.5;
-            }
-            else {
+                this.weightUnit = "kg";
+            } else {
                 this.incAmount = 5;
+                this.weightUnit = "lbs";
             }
         }
     }
@@ -102,33 +120,29 @@ public class MainPage extends AppCompatActivity {
         if (benchORM != null) {
             if (benchORM.equals("0.0")) {
                 benchORMEditText.setText("");
-            }
-            else{
-                benchORMEditText.setText(benchORM);
+            } else {
+                benchORMEditText.setText(formatWeight(benchORM, isKg));
             }
         }
         if (ohpORM != null) {
             if (ohpORM.equals("0.0")) {
                 ohpORMEditText.setText("");
-            }
-            else{
-                ohpORMEditText.setText(ohpORM);
+            } else {
+                ohpORMEditText.setText(formatWeight(ohpORM, isKg));
             }
         }
         if (squatORM != null) {
             if (squatORM.equals("0.0")) {
                 squatORMEditText.setText("");
-            }
-            else{
-                squatORMEditText.setText(squatORM);
+            } else {
+                squatORMEditText.setText(formatWeight(squatORM, isKg));
             }
         }
         if (deadliftORM != null) {
             if (deadliftORM.equals("0.0")) {
                 deadliftORMEditText.setText("");
-            }
-            else{
-                deadliftORMEditText.setText(deadliftORM);
+            } else {
+                deadliftORMEditText.setText(formatWeight(deadliftORM, isKg));
             }
         }
     }
@@ -137,10 +151,9 @@ public class MainPage extends AppCompatActivity {
         if (benchORMEditText.getText().toString().equals("")) {
             benchORMEditText.setText("10");
             setBenchORMInPrefs(10);
-        }
-        else {
+        } else {
             double benchORMDouble = Double.parseDouble(benchORMEditText.getText().toString());
-            benchORMEditText.setText(String.format("%s",benchORMDouble + incAmount));
+            benchORMEditText.setText(formatWeight(benchORMDouble + incAmount, isKg));
             setBenchORMInPrefs(benchORMDouble + incAmount);
         }
     }
@@ -148,14 +161,12 @@ public class MainPage extends AppCompatActivity {
     public void decreaseBench(View view) {
         if (benchORMEditText.getText().toString().equals("")) {
             vibr.vibrate(30);
-        }
-        else if (Double.parseDouble(benchORMEditText.getText().toString()) <= incAmount) {
+        } else if (Double.parseDouble(benchORMEditText.getText().toString()) <= incAmount) {
             benchORMEditText.setText("");
             setBenchORMInPrefs(0);
-        }
-        else {
+        } else {
             double ohpORMDouble = Double.parseDouble(benchORMEditText.getText().toString());
-            benchORMEditText.setText(String.format("%s",ohpORMDouble - incAmount));
+            benchORMEditText.setText(formatWeight(ohpORMDouble - incAmount, isKg));
             setBenchORMInPrefs(ohpORMDouble - incAmount);
         }
     }
@@ -165,10 +176,9 @@ public class MainPage extends AppCompatActivity {
         if (ohpORMEditText.getText().toString().equals("")) {
             ohpORMEditText.setText("10");
             setOhpORMInPrefs(10);
-        }
-        else {
+        } else {
             double ohpORMDouble = Double.parseDouble(ohpORMEditText.getText().toString());
-            ohpORMEditText.setText(String.format("%s",ohpORMDouble + incAmount));
+            ohpORMEditText.setText(formatWeight(ohpORMDouble + incAmount, isKg));
             setOhpORMInPrefs(ohpORMDouble + incAmount);
         }
     }
@@ -176,28 +186,24 @@ public class MainPage extends AppCompatActivity {
     public void decreaseOhp(View view) {
         if (ohpORMEditText.getText().toString().equals("")) {
             vibr.vibrate(30);
-        }
-        else if (Double.parseDouble(ohpORMEditText.getText().toString()) <= incAmount) {
+        } else if (Double.parseDouble(ohpORMEditText.getText().toString()) <= incAmount) {
             ohpORMEditText.setText("");
             setOhpORMInPrefs(0);
-        }
-        else {
+        } else {
             double ohpORMDouble = Double.parseDouble(ohpORMEditText.getText().toString());
-            ohpORMEditText.setText(String.format("%s",ohpORMDouble - incAmount));
+            ohpORMEditText.setText(formatWeight(ohpORMDouble - incAmount, isKg));
             setOhpORMInPrefs(ohpORMDouble - incAmount);
         }
     }
-
 
 
     public void increaseSquat(View view) {
         if (squatORMEditText.getText().toString().equals("")) {
             squatORMEditText.setText("10");
             setSquatORMInPrefs(10);
-        }
-        else {
+        } else {
             double squatORMDouble = Double.parseDouble(squatORMEditText.getText().toString());
-            squatORMEditText.setText(String.format("%s",squatORMDouble + incAmount));
+            squatORMEditText.setText(formatWeight(squatORMDouble + incAmount, isKg));
             setOhpORMInPrefs(squatORMDouble + incAmount);
         }
     }
@@ -205,14 +211,12 @@ public class MainPage extends AppCompatActivity {
     public void decreaseSquat(View view) {
         if (squatORMEditText.getText().toString().equals("")) {
             vibr.vibrate(30);
-        }
-        else if (Double.parseDouble(squatORMEditText.getText().toString()) <= incAmount) {
+        } else if (Double.parseDouble(squatORMEditText.getText().toString()) <= incAmount) {
             squatORMEditText.setText("");
             setSquatORMInPrefs(0);
-        }
-        else {
+        } else {
             double squatORMDouble = Double.parseDouble(squatORMEditText.getText().toString());
-            squatORMEditText.setText(String.format("%s",squatORMDouble - incAmount));
+            squatORMEditText.setText(formatWeight(squatORMDouble - incAmount, isKg));
             setOhpORMInPrefs(squatORMDouble - incAmount);
         }
     }
@@ -222,10 +226,9 @@ public class MainPage extends AppCompatActivity {
         if (deadliftORMEditText.getText().toString().equals("")) {
             deadliftORMEditText.setText("10");
             setDeadliftORMInPrefs(10);
-        }
-        else {
+        } else {
             double deadliftORMDouble = Double.parseDouble(deadliftORMEditText.getText().toString());
-            deadliftORMEditText.setText(String.format("%s",deadliftORMDouble + incAmount));
+            deadliftORMEditText.setText(formatWeight(deadliftORMDouble + incAmount, isKg));
             setDeadliftORMInPrefs(deadliftORMDouble + incAmount);
         }
     }
@@ -233,14 +236,12 @@ public class MainPage extends AppCompatActivity {
     public void decreaseDeadlift(View view) {
         if (deadliftORMEditText.getText().toString().equals("")) {
             vibr.vibrate(30);
-        }
-        else if (Double.parseDouble(deadliftORMEditText.getText().toString()) <= incAmount) {
+        } else if (Double.parseDouble(deadliftORMEditText.getText().toString()) <= incAmount) {
             deadliftORMEditText.setText("");
             setDeadliftORMInPrefs(0);
-        }
-        else {
+        } else {
             double deadliftORMDouble = Double.parseDouble(deadliftORMEditText.getText().toString());
-            deadliftORMEditText.setText(String.format("%s",deadliftORMDouble - incAmount));
+            deadliftORMEditText.setText(formatWeight(deadliftORMDouble - incAmount, isKg));
             setDeadliftORMInPrefs(deadliftORMDouble - incAmount);
         }
     }
@@ -272,4 +273,5 @@ public class MainPage extends AppCompatActivity {
         sharedPrefEditor.apply();
         sharedPrefEditor.commit();
     }
+
 }

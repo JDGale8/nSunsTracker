@@ -33,7 +33,7 @@ public class WeightCalculator {
     }
 
     public double calculateWeight(double oneRepMax, double factor) {
-        double retval = Math.round(oneRepMax *  0.65 / roundingFactor) * roundingFactor;
+        double retval = Math.round(oneRepMax *  factor / roundingFactor) * roundingFactor;
         if (retval > 999) {
             return 999;
         }

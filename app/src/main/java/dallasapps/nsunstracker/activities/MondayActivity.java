@@ -148,7 +148,7 @@ public class MondayActivity extends AppCompatActivity {
             bench6Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.80), isKg)));
             bench7Btn.setText(String.format("%s\nx6",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.75), isKg)));
             bench8Btn.setText(String.format("%s\nx7",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
-            bench9Btn.setText(String.format("%s\nx8",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.65), isKg)));
+            bench9Btn.setText(String.format("%s\nx8+", formatWeight(weightCalc.calculateWeight(oneRepMax, 0.65), isKg)));
         }
 
     }

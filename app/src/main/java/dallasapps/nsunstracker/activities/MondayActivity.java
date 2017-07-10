@@ -2,6 +2,7 @@ package dallasapps.nsunstracker.activities;
 
 import android.content.SharedPreferences;
 import android.os.Vibrator;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -14,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import dallasapps.nsunstracker.R;
+import dallasapps.nsunstracker.util.AssistanceAdder;
 import dallasapps.nsunstracker.util.WeightCalculator;
 
 import static dallasapps.nsunstracker.util.Converter.convertDpToPixels;
@@ -101,33 +103,13 @@ public class MondayActivity extends AppCompatActivity {
 
 
     public void addLayout(View view){
-        int n = 3;
         LinearLayout mainVerticalLayout = (LinearLayout) findViewById(R.id.mainVerticalLayout);
-
-        CardView assistanceCardView = new CardView(this);
-        assistanceCardView.setPadding(0,16,0,16);
         final Button addAccessoryBtn = (Button) findViewById(R.id.addAccessoryBtn);
 
-
+        // Remove the button to appear later on the other side of the new card
         mainVerticalLayout.removeView(addAccessoryBtn);
-        LinearLayout assistanceLayout = new LinearLayout(this);
-        assistanceLayout.setOrientation(LinearLayout.HORIZONTAL);
-
-        assistanceCardView.addView(assistanceLayout);
-
-        TextView exerciseNameLabel = new TextView(this);
-        exerciseNameLabel.setText("Exercise name");
-        exerciseNameLabel.setWidth(convertDpToPixels(80, this));
-        exerciseNameLabel.setGravity(0);
-        assistanceLayout.addView(exerciseNameLabel);
-
-        for (int i = 0; i < n; i++) {
-            Button setButton = new Button(this);
-            setButton.setText("--\nx8");
-            setButton.setWidth(convertDpToPixels(30, this));
-            setButton.setHeight(convertDpToPixels(30, this));
-            assistanceLayout.addView(setButton);
-        }
+        AssistanceAdder adder = new AssistanceAdder();
+        CardView assistanceCardView = adder.createAssistanceLayout(this);
 
         mainVerticalLayout.addView(assistanceCardView);
         mainVerticalLayout.addView(addAccessoryBtn);

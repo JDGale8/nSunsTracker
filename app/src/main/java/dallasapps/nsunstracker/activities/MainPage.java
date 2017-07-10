@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -70,7 +72,87 @@ public class MainPage extends AppCompatActivity {
                 vibr.vibrate(28);
             }
         });
+
+
+        benchORMEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!editable.toString().equals("")) {
+                    setBenchORMInPrefs(Double.parseDouble(editable.toString()));
+                }
+            }
+        });
+
+
+        ohpORMEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!editable.toString().equals("")) {
+                    setOhpORMInPrefs(Double.parseDouble(editable.toString()));
+                }
+            }
+        });
+
+        squatORMEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!editable.toString().equals("")) {
+                    setSquatORMInPrefs(Double.parseDouble(editable.toString()));
+                }
+            }
+        });
+
+        deadliftORMEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // DO NOTHING
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (!editable.toString().equals("")) {
+                    setDeadliftORMInPrefs(Double.parseDouble(editable.toString()));
+                }
+            }
+        });
+
     }
+    
 
     private void setWeightUnits() {
         TextView benchUnit = (TextView) findViewById(R.id.benchUnit);
@@ -165,9 +247,9 @@ public class MainPage extends AppCompatActivity {
             benchORMEditText.setText("");
             setBenchORMInPrefs(0);
         } else {
-            double ohpORMDouble = Double.parseDouble(benchORMEditText.getText().toString());
-            benchORMEditText.setText(formatWeight(ohpORMDouble - incAmount, isKg));
-            setBenchORMInPrefs(ohpORMDouble - incAmount);
+            double benchORMDouble = Double.parseDouble(benchORMEditText.getText().toString());
+            benchORMEditText.setText(formatWeight(benchORMDouble - incAmount, isKg));
+            setBenchORMInPrefs(benchORMDouble - incAmount);
         }
     }
 

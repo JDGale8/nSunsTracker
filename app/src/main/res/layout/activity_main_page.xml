@@ -78,64 +78,72 @@
                         android:id="@+id/bench1RMInfo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="0.72"
                         android:gravity="center"
                         android:textSize="18sp"
                         android:text="Bench" />
 
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_height="74dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.25">
 
                         <Button
                             android:id="@+id/minusBench"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
+                            android:layout_alignBaseline="@+id/plusBench"
+                            android:layout_alignBottom="@+id/plusBench"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
-                            android:text="@string/minusBtnText"
-                            android:onClick="decreaseBench"/>
-
-                        <View
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:gravity="right|end"
-                            android:text="lbs" />
+                            android:onClick="decreaseBench"
+                            android:text="@string/minusBtnText" />
 
                         <EditText
                             android:id="@+id/bench1RMAmount"
-                            android:layout_weight="1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="40dp"
+                            android:layout_weight="1"
+                            android:imeOptions="actionDone"
                             android:gravity="center"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
                             android:hint="@string/noNumber"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5"
                             android:textSize="30sp" />
 
                         <TextView
                             android:id="@+id/benchUnit"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:gravity="right|end"
+                            android:layout_alignBaseline="@+id/bench1RMAmount"
+                            android:layout_alignBottom="@+id/bench1RMAmount"
+                            android:layout_alignLeft="@+id/plusBench"
+                            android:layout_alignStart="@+id/plusBench"
                             android:text="lbs" />
 
                         <Button
                             android:id="@+id/plusBench"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@android:color/transparent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
                             android:layout_gravity="center_vertical"
-                            android:text="@string/plusBtnText"
-                            android:onClick="increaseBench"/>
+                            android:background="@android:color/transparent"
+                            android:onClick="increaseBench"
+                            android:text="@string/plusBtnText" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -165,59 +173,66 @@
                         android:textSize="18sp"
                         android:text="Overhead Press" />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_height="74dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.25">
 
                         <Button
-                            android:id="@+id/minusOHP"
+                            android:id="@+id/minusOhp"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
+                            android:layout_alignBaseline="@+id/plusOhp"
+                            android:layout_alignBottom="@+id/plusOhp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
-                            android:text="@string/minusBtnText"
-                            android:onClick="decreaseOhp"/>
-
-                        <View
-                            android:id="@+id/view"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:gravity="right|end"
-                            android:text="lbs" />
+                            android:onClick="decreaseOhp"
+                            android:text="@string/minusBtnText" />
 
                         <EditText
                             android:id="@+id/ohp1RMAmount"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="40dp"
+                            android:imeOptions="actionDone"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
                             android:hint="@string/noNumber"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5"
                             android:textSize="30sp" />
 
                         <TextView
                             android:id="@+id/ohpUnit"
-                            android:layout_width="wrap_content"
+                            android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:gravity="right|end"
+                            android:layout_alignBaseline="@+id/ohp1RMAmount"
+                            android:layout_alignBottom="@+id/ohp1RMAmount"
+                            android:layout_alignLeft="@+id/plusOhp"
+                            android:layout_alignStart="@+id/plusOhp"
                             android:text="lbs" />
 
                         <Button
-                            android:id="@+id/plusOHP"
+                            android:id="@+id/plusOhp"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
-                            android:text="@string/plusBtnText"
-                            android:onClick="increaseOhp"/>
+                            android:onClick="increaseOhp"
+                            android:text="@string/plusBtnText" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -252,60 +267,66 @@
                         android:textSize="18sp"
                         android:text="Squat" />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_height="74dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.25">
 
                         <Button
                             android:id="@+id/minusSquat"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
+                            android:layout_alignBaseline="@+id/plusSquat"
+                            android:layout_alignBottom="@+id/plusSquat"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
                             android:onClick="decreaseSquat"
                             android:text="@string/minusBtnText" />
 
-                        <View
-                            android:id="@+id/view2"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:gravity="right|end"
-                            android:text="lbs" />
-
                         <EditText
                             android:id="@+id/squat1RMAmount"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="40dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
+                            android:imeOptions="actionDone"
                             android:hint="@string/noNumber"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5"
                             android:textSize="30sp" />
 
                         <TextView
                             android:id="@+id/squatUnit"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.02"
-                            android:gravity="right|end"
+                            android:layout_alignBaseline="@+id/squat1RMAmount"
+                            android:layout_alignBottom="@+id/squat1RMAmount"
+                            android:layout_alignLeft="@+id/plusSquat"
+                            android:layout_alignStart="@+id/plusSquat"
                             android:text="lbs" />
 
                         <Button
                             android:id="@+id/plusSquat"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
                             android:onClick="increaseSquat"
                             android:text="@string/plusBtnText" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -335,60 +356,66 @@
                         android:text="Deadlift"
                         android:textSize="18sp" />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:layout_height="74dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="0.25">
 
                         <Button
                             android:id="@+id/minusDeadlift"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
+                            android:layout_alignBaseline="@+id/plusDeadlift"
+                            android:layout_alignBottom="@+id/plusDeadlift"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
                             android:onClick="decreaseDeadlift"
                             android:text="@string/minusBtnText" />
 
-                        <View
-                            android:id="@+id/view3"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:gravity="right|end"
-                            android:text="lbs" />
-
                         <EditText
-                            android:id="@+id/deadLift1RMAmount"
-                            android:layout_width="0dp"
+                            android:id="@+id/deadlift1RMAmount"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginRight="40dp"
+                            android:imeOptions="actionDone"
                             android:layout_weight="1"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
                             android:gravity="center"
                             android:hint="@string/noNumber"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5"
                             android:textSize="30sp" />
 
                         <TextView
                             android:id="@+id/deadliftUnit"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.01"
-                            android:gravity="right|end"
+                            android:layout_alignBaseline="@+id/deadlift1RMAmount"
+                            android:layout_alignBottom="@+id/deadlift1RMAmount"
+                            android:layout_alignLeft="@+id/plusDeadlift"
+                            android:layout_alignStart="@+id/plusDeadlift"
                             android:text="lbs" />
 
                         <Button
                             android:id="@+id/plusDeadlift"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
                             android:layout_gravity="center_vertical"
                             android:background="@android:color/transparent"
                             android:onClick="increaseDeadlift"
                             android:text="@string/plusBtnText" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
                 </LinearLayout>
 

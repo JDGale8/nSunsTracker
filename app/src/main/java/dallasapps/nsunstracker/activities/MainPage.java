@@ -44,8 +44,8 @@ public class MainPage extends AppCompatActivity {
 
         final Button plusBenchBtn = (Button) findViewById(R.id.plusBench);
         final Button minusBenchBtn = (Button) findViewById(R.id.minusBench);
-        final Button plusOhpBtn = (Button) findViewById(R.id.plusOHP);
-        final Button minusOhpBtn = (Button) findViewById(R.id.minusOHP);
+        final Button plusOhpBtn = (Button) findViewById(R.id.plusOhp);
+        final Button minusOhpBtn = (Button) findViewById(R.id.minusOhp);
         final Button plusSquatBtn = (Button) findViewById(R.id.plusSquat);
         final Button minusSquatBtn = (Button) findViewById(R.id.minusSquat);
         final Button plusDeadliftBtn = (Button) findViewById(R.id.plusDeadlift);
@@ -54,7 +54,7 @@ public class MainPage extends AppCompatActivity {
         benchORMEditText = (EditText) findViewById(R.id.bench1RMAmount);
         ohpORMEditText = (EditText) findViewById(R.id.ohp1RMAmount);
         squatORMEditText = (EditText) findViewById(R.id.squat1RMAmount);
-        deadliftORMEditText = (EditText) findViewById(R.id.deadLift1RMAmount);
+        deadliftORMEditText = (EditText) findViewById(R.id.deadlift1RMAmount);
 
         vibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         getSharedPrefs();

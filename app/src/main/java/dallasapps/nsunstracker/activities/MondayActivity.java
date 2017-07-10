@@ -1,18 +1,22 @@
 package dallasapps.nsunstracker.activities;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import dallasapps.nsunstracker.R;
 import dallasapps.nsunstracker.util.WeightCalculator;
 
+import static dallasapps.nsunstracker.util.Converter.convertDpToPixels;
 import static dallasapps.nsunstracker.util.StringFormatter.formatWeight;
 
 /**
@@ -93,6 +97,40 @@ public class MondayActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    public void addLayout(View view){
+        int n = 3;
+        LinearLayout mainVerticalLayout = (LinearLayout) findViewById(R.id.mainVerticalLayout);
+
+        CardView assistanceCardView = new CardView(this);
+        assistanceCardView.setPadding(0,16,0,16);
+        final Button addAccessoryBtn = (Button) findViewById(R.id.addAccessoryBtn);
+
+
+        mainVerticalLayout.removeView(addAccessoryBtn);
+        LinearLayout assistanceLayout = new LinearLayout(this);
+        assistanceLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+        assistanceCardView.addView(assistanceLayout);
+
+        TextView exerciseNameLabel = new TextView(this);
+        exerciseNameLabel.setText("Exercise name");
+        exerciseNameLabel.setWidth(convertDpToPixels(80, this));
+        exerciseNameLabel.setGravity(0);
+        assistanceLayout.addView(exerciseNameLabel);
+
+        for (int i = 0; i < n; i++) {
+            Button setButton = new Button(this);
+            setButton.setText("--\nx8");
+            setButton.setWidth(convertDpToPixels(30, this));
+            setButton.setHeight(convertDpToPixels(30, this));
+            assistanceLayout.addView(setButton);
+        }
+
+        mainVerticalLayout.addView(assistanceCardView);
+        mainVerticalLayout.addView(addAccessoryBtn);
     }
 
 

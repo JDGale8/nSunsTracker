@@ -358,8 +358,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:onClick="addLayout"
             android:layout_below="@+id/mainVerticalLayout"
-            android:text="+Accessory" />
+            android:text="+ Accessory" />
 
     </LinearLayout>
 

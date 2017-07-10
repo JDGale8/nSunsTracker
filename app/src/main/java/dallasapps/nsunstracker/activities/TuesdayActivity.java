@@ -139,15 +139,15 @@ public class TuesdayActivity extends AppCompatActivity {
         final Button squat8Btn = (Button) findViewById(R.id.squat8Btn);
         final Button squat9Btn = (Button) findViewById(R.id.squat9Btn);
         if (oneRepMax > 0) {
-            squat1Btn.setText(String.format("%s\nx8",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.65), isKg)));
-            squat2Btn.setText(String.format("%s\nx6",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.75), isKg)));
-            squat3Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.85), isKg)));
-            squat4Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.85), isKg)));
-            squat5Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.85), isKg)));
-            squat6Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.80), isKg)));
-            squat7Btn.setText(String.format("%s\nx6",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.75), isKg)));
-            squat8Btn.setText(String.format("%s\nx7",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
-            squat9Btn.setText(String.format("%s\nx8+", formatWeight(weightCalc.calculateWeight(oneRepMax, 0.65), isKg)));
+            squat1Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.75), isKg)));
+            squat2Btn.setText(String.format("%s\nx3",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.85), isKg)));
+            squat3Btn.setText(String.format("%s\nx1+", formatWeight(weightCalc.calculateWeight(oneRepMax, 0.95), isKg)));
+            squat4Btn.setText(String.format("%s\nx3",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.90), isKg)));
+            squat5Btn.setText(String.format("%s\nx3",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.85), isKg)));
+            squat6Btn.setText(String.format("%s\nx3",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.80), isKg)));
+            squat7Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.75), isKg)));
+            squat8Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
+            squat9Btn.setText(String.format("%s\nx5+", formatWeight(weightCalc.calculateWeight(oneRepMax, 0.65), isKg)));
         }
 
     }
@@ -164,9 +164,9 @@ public class TuesdayActivity extends AppCompatActivity {
         final Button deadlift8Btn = (Button) findViewById(R.id.deadlift8Btn);
 
         if (oneRepMax > 0) {
-            deadlift1Btn.setText(String.format("%s\nx6",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.50), isKg)));
+            deadlift1Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.50), isKg)));
             deadlift2Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.60), isKg)));
-            deadlift3Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
+            deadlift3Btn.setText(String.format("%s\nx3",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
             deadlift4Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
             deadlift5Btn.setText(String.format("%s\nx7",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
             deadlift6Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));

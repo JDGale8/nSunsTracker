@@ -1,17 +1,25 @@
 package dallasapps.nsunstracker.activities;
 
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.os.Vibrator;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import dallasapps.nsunstracker.R;
+import dallasapps.nsunstracker.util.AssistanceAdder;
 import dallasapps.nsunstracker.util.WeightCalculator;
 
+import static dallasapps.nsunstracker.util.Converter.convertDpToPixels;
 import static dallasapps.nsunstracker.util.StringFormatter.formatWeight;
 
 /**
@@ -37,6 +45,7 @@ public class TuesdayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_monday);
 
         final Vibrator vibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         // INITIATE BUTTONS
         final Button addAccessoryBtn = (Button) findViewById(R.id.addAccessoryBtn);
@@ -92,6 +101,20 @@ public class TuesdayActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    public void addLayout(View view){
+        LinearLayout mainVerticalLayout = (LinearLayout) findViewById(R.id.mainVerticalLayout);
+        final Button addAccessoryBtn = (Button) findViewById(R.id.addAccessoryBtn);
+
+        // Remove the button to appear later on the other side of the new card
+        mainVerticalLayout.removeView(addAccessoryBtn);
+        AssistanceAdder adder = new AssistanceAdder();
+        CardView assistanceCardView = adder.createAssistanceLayout(this);
+
+        mainVerticalLayout.addView(assistanceCardView);
+        mainVerticalLayout.addView(addAccessoryBtn);
     }
 
 

@@ -44,6 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
                 android:layout_weight="1">
 
                 <LinearLayout
@@ -90,6 +91,7 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
                 android:layout_weight="1">
 
@@ -200,14 +202,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx8" />
+                        android:text="--\nx5" />
 
                     <Button
                         android:id="@+id/squat5Btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx4" />
+                        android:text="--\nx3" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -221,7 +223,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx6" />
+                        android:text="--\nx3" />
 
                     <Button
                         android:id="@+id/squat6Btn"
@@ -229,7 +231,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:text="--\nx5" />
+                        android:text="--\nx3" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -243,14 +245,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx4" />
+                        android:text="--\nx1+" />
 
                     <Button
                         android:id="@+id/squat7Btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx6" />
+                        android:text="--\nx5" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -264,14 +266,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx4" />
+                        android:text="--\nx3" />
 
                     <Button
                         android:id="@+id/squat8Btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx7" />
+                        android:text="--\nx5" />
                 </LinearLayout>
 
                 <RelativeLayout
@@ -285,7 +287,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="--\nx8+" />
+                        android:text="--\nx5+" />
                 </RelativeLayout>
 
 
@@ -334,7 +336,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx6" />
+                        android:text="--\nx5" />
 
                     <Button
                         android:id="@+id/deadlift5Btn"

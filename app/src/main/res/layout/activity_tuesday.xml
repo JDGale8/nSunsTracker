@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -33,95 +33,111 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <!-- BENCH 1 RM LABELS-->
-            <LinearLayout
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/deadlift1RMLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Deadlift 1RM" />
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/deadlift1RMEditNumber"
-                        android:layout_width="70dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:ems="10"
-                        android:gravity="center_horizontal"
-                        android:hint="@string/noNumber"
-                        android:inputType="numberDecimal"
-                        android:maxLength="5" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/lbsLabelSquat"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="left|center_vertical"
-                        android:text="lbs" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/squat1RMLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="Squat 1RM" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/squat1RMEditNumber"
-                        android:layout_width="70dp"
+                        android:id="@+id/squat1RMLabel"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:ems="10"
-                        android:gravity="center_horizontal"
-                        android:hint="@string/noNumber"
-                        android:inputType="numberDecimal"
-                        android:maxLength="5" />
+                        android:text="Squat 1RM" />
 
-                    <TextView
-                        android:id="@+id/lbsLabelDeadlift"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:gravity="left|center_vertical"
-                        android:text="lbs" />
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/squat1RMEditNumber"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:hint="@string/noNumber"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5" />
+
+                        <TextView
+                            android:id="@+id/lbsLabelDeadlift"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:text="lbs" />
+                    </LinearLayout>
+
                 </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-            </LinearLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/deadlift1RMLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Deadlift 1RM" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/deadlift1RMEditNumber"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:hint="@string/noNumber"
+                            android:inputType="numberDecimal"
+                            android:maxLength="5" />
+
+                        <TextView
+                            android:id="@+id/lbsLabelSquat"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="left|center_vertical"
+                            android:text="lbs" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
 
-            <!-- OHP 1RM LABELS-->
+            <!-- Deadlift 1RM LABELS-->
 
 
             <!-- DO WE NEED A THIRD DISPLAY?-->
@@ -142,225 +158,286 @@
 
 
         <!-- BENCH PRESS -->
-        <LinearLayout
-            android:id="@+id/squatHorizontalLayout"
+        <android.support.v7.widget.CardView
+            android:id="@+id/squatCard"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginBottom="16dp"
-            android:orientation="horizontal">
-
-            <!-- FIRST ROW -->
-
-            <TextView
-                android:id="@+id/squatLabel"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Squat"
-                android:textSize="15dp" />
-
+            android:layout_weight="1" >
 
             <LinearLayout
-                android:id="@+id/squatButtonsVertLayout"
+                android:id="@+id/squatHorizontalLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.52"
-                android:orientation="vertical">
+                android:orientation="horizontal">
+
+                <!-- FIRST ROW -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.9">
 
+                    <TextView
+                        android:id="@+id/squatLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Squat"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
                     <Button
                         android:id="@+id/squat1Btn"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx5" />
-
-                    <Button
-                        android:id="@+id/squat2Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="--\nx3" />
-
-                    <Button
-                        android:id="@+id/squat3Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="--\nx1+" />
-
-                    <Button
-                        android:id="@+id/squat4Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="--\nx3" />
-
-                </LinearLayout>
-
-
-                <!-- SECOND ROW -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                        android:text="--\nx8" />
 
                     <Button
                         android:id="@+id/squat5Btn"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx3" />
-
-                    <Button
-                        android:id="@+id/squat6Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_weight="1"
-                        android:text="--\nx3" />
-
-                    <Button
-                        android:id="@+id/squat7Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="--\nx5" />
-
-                    <Button
-                        android:id="@+id/squat8Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="--\nx5"  />
-
+                        android:text="--\nx4" />
                 </LinearLayout>
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/squat9Btn"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="--\nx5+" />
-        </LinearLayout>
-
-        <!-- OVERHEAD PRESS -->
-        <LinearLayout
-            android:id="@+id/deadliftHorizontalLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal">
-
-            <!-- FIRST ROW -->
-
-            <TextView
-                android:id="@+id/deadliftLabel"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Deadlift"
-                android:textSize="15dp" />
-
-
-            <LinearLayout
-                android:id="@+id/deadliftButtonsVertLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.52"
-                android:orientation="vertical"
-                android:layout_marginRight="50dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
 
                     <Button
-                        android:id="@+id/deadlift1Btn"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/squat2Btn"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="--\nx6" />
 
                     <Button
-                        android:id="@+id/deadlift2Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="--\nx5" />
-
-                    <Button
-                        android:id="@+id/deadlift3Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="--\nx3"  />
-
-                    <Button
-                        android:id="@+id/deadlift4Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="--\nx5" />
-
-                </LinearLayout>
-
-
-                <!-- SECOND ROW -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <Button
-                        android:id="@+id/deadlift5Btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="--\nx7" />
-
-                    <Button
-                        android:id="@+id/deadlift6Btn"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/squat6Btn"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:text="--\nx5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/squat3Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="--\nx4" />
 
                     <Button
-                        android:id="@+id/deadlift7Btn"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/squat7Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="--\nx6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/squat4Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="--\nx4" />
+
+                    <Button
+                        android:id="@+id/squat8Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="--\nx7" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/squat9Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="--\nx8+" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/deadliftCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:id="@+id/deadliftHorizontalLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- FIRST ROW -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/deadliftLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Deadlift"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/deadlift1Btn"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="--\nx6" />
 
                     <Button
+                        android:id="@+id/deadlift5Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="--\nx7" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/deadlift2Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="--\nx5" />
+
+                    <Button
+                        android:id="@+id/deadlift6Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:text="--\nx4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/deadlift3Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="--\nx3" />
+
+                    <Button
+                        android:id="@+id/deadlift7Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="--\nx6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/deadlift4Btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="--\nx5" />
+
+                    <Button
                         android:id="@+id/deadlift8Btn"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="--\nx8" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+                </LinearLayout>
+
 
             </LinearLayout>
+        </android.support.v7.widget.CardView>
 
-        </LinearLayout>
+        <!-- OVERHEAD PRESS -->
+
+        <Button
+            android:id="@+id/addAccessoryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="addLayout"
+            android:layout_below="@+id/mainVerticalLayout"
+            android:text="+ Accessory" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/addAccessoryBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/mainVerticalLayout"
-        android:text="+Accessory" />
 
 
-</RelativeLayout>
+
+</ScrollView>

@@ -32,8 +32,14 @@ public class WeightCalculator {
         calculateRoundingFactor();
     }
 
-    public double calculateBench1(double oneRepMax) {
-        return Math.round(oneRepMax *  0.65 / roundingFactor) * roundingFactor;
+    public double calculateWeight(double oneRepMax, double factor) {
+        double retval = Math.round(oneRepMax *  0.65 / roundingFactor) * roundingFactor;
+        if (retval > 999) {
+            return 999;
+        }
+        else {
+            return retval;
+        }
     }
     public double calculateBench2(double oneRepMax) {
         return Math.round(oneRepMax *  0.75 / roundingFactor) * roundingFactor;

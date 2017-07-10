@@ -59,14 +59,14 @@
 
                     <EditText
                         android:id="@+id/ohp1RMEditNumber"
-                        android:layout_width="50dp"
+                        android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:ems="10"
                         android:gravity="center_horizontal"
                         android:hint="@string/noNumber"
                         android:inputType="numberDecimal"
-                        android:maxLength="3" />
+                        android:maxLength="5" />
 
                     <TextView
                         android:id="@+id/lbsLabelBench"
@@ -101,14 +101,14 @@
 
                     <EditText
                         android:id="@+id/bench1RMEditNumber"
-                        android:layout_width="50dp"
+                        android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:ems="10"
                         android:gravity="center_horizontal"
                         android:hint="@string/noNumber"
                         android:inputType="numberDecimal"
-                        android:maxLength="3" />
+                        android:maxLength="5" />
 
                     <TextView
                         android:id="@+id/lbsLabelOhp"

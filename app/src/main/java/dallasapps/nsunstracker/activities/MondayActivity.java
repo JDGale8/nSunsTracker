@@ -13,6 +13,8 @@ import android.widget.EditText;
 import dallasapps.nsunstracker.R;
 import dallasapps.nsunstracker.util.WeightCalculator;
 
+import static dallasapps.nsunstracker.util.StringFormatter.formatWeight;
+
 /**
  * Controller class for Monday nSuns 4
  * The user will press each button in order for however many reps they can get
@@ -28,7 +30,7 @@ public class MondayActivity extends AppCompatActivity {
 
     private double benchOneRepMax = 0;
     private double ohpOneRepMax = 0;
-    private boolean isKg = false;
+    private boolean isKg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class MondayActivity extends AppCompatActivity {
 
         final EditText bench1RMEditText = (EditText) findViewById(R.id.bench1RMEditNumber);
         final EditText ohp1RMEditText = (EditText) findViewById(R.id.ohp1RMEditNumber);
+
+        getWeightUnitFromSharedPrefs();
 
         final WeightCalculator weightCalc = new WeightCalculator(isKg);
 
@@ -106,10 +110,10 @@ public class MondayActivity extends AppCompatActivity {
 
         if (bench1RM != null) {
             if (bench1RM.equals("0.0")) {
-                bench1RMEditText.setText(bench1RM);
+                bench1RMEditText.setText("");
             }
             else {
-                bench1RMEditText.setText(bench1RM);
+                bench1RMEditText.setText(formatWeight(bench1RM, isKg));
                 this.benchOneRepMax = Double.parseDouble(bench1RM);
             }
         }
@@ -118,7 +122,7 @@ public class MondayActivity extends AppCompatActivity {
                 ohp1RMEditText.setText("");
             }
             else {
-                ohp1RMEditText.setText(ohp1RM);
+                ohp1RMEditText.setText(formatWeight(ohp1RM, isKg));
                 this.ohpOneRepMax = Double.parseDouble(ohp1RM);
             }
         }
@@ -136,28 +140,15 @@ public class MondayActivity extends AppCompatActivity {
         final Button bench8Btn = (Button) findViewById(R.id.bench8Btn);
         final Button bench9Btn = (Button) findViewById(R.id.bench9Btn);
         if (oneRepMax > 0) {
-            if(!isKg) {
-                bench1Btn.setText(String.format("%s\nx8", (int) weightCalc.calculateBench1(oneRepMax)));
-                bench2Btn.setText(String.format("%s\nx6", (int) weightCalc.calculateBench2(oneRepMax)));
-                bench3Btn.setText(String.format("%s\nx4", (int) weightCalc.calculateBench3(oneRepMax)));
-                bench4Btn.setText(String.format("%s\nx4", (int) weightCalc.calculateBench4(oneRepMax)));
-                bench5Btn.setText(String.format("%s\nx4", (int) weightCalc.calculateBench5(oneRepMax)));
-                bench6Btn.setText(String.format("%s\nx5", (int) weightCalc.calculateBench6(oneRepMax)));
-                bench7Btn.setText(String.format("%s\nx6", (int) weightCalc.calculateBench7(oneRepMax)));
-                bench8Btn.setText(String.format("%s\nx7", (int) weightCalc.calculateBench8(oneRepMax)));
-                bench9Btn.setText(String.format("%s\nx8+", (int) weightCalc.calculateBench9(oneRepMax)));
-            }
-            else {
-                bench1Btn.setText(String.format("%s\nx8",  weightCalc.calculateBench1(oneRepMax)));
-                bench2Btn.setText(String.format("%s\nx6",  weightCalc.calculateBench2(oneRepMax)));
-                bench3Btn.setText(String.format("%s\nx4",  weightCalc.calculateBench3(oneRepMax)));
-                bench4Btn.setText(String.format("%s\nx4",  weightCalc.calculateBench4(oneRepMax)));
-                bench5Btn.setText(String.format("%s\nx4",  weightCalc.calculateBench5(oneRepMax)));
-                bench6Btn.setText(String.format("%s\nx5",  weightCalc.calculateBench6(oneRepMax)));
-                bench7Btn.setText(String.format("%s\nx6",  weightCalc.calculateBench7(oneRepMax)));
-                bench8Btn.setText(String.format("%s\nx7",  weightCalc.calculateBench8(oneRepMax)));
-                bench9Btn.setText(String.format("%s\nx8+", weightCalc.calculateBench9(oneRepMax)));
-            }
+            bench1Btn.setText(String.format("%s\nx8",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.65), isKg)));
+            bench2Btn.setText(String.format("%s\nx6",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.75), isKg)));
+            bench3Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.85), isKg)));
+            bench4Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.85), isKg)));
+            bench5Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.85), isKg)));
+            bench6Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.80), isKg)));
+            bench7Btn.setText(String.format("%s\nx6",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.75), isKg)));
+            bench8Btn.setText(String.format("%s\nx7",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
+            bench9Btn.setText(String.format("%s\nx8",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.65), isKg)));
         }
 
     }
@@ -174,28 +165,14 @@ public class MondayActivity extends AppCompatActivity {
         final Button ohp8Btn = (Button) findViewById(R.id.ohp8Btn);
 
         if (oneRepMax > 0) {
-            if(!isKg) {
-                ohp1Btn.setText(String.format("%s\nx6", (int) weightCalc.calculateOhp1(oneRepMax)));
-                ohp2Btn.setText(String.format("%s\nx5", (int) weightCalc.calculateOhp2(oneRepMax)));
-                ohp3Btn.setText(String.format("%s\nx3", (int) weightCalc.calculateOhp3(oneRepMax)));
-                ohp4Btn.setText(String.format("%s\nx5", (int) weightCalc.calculateOhp4(oneRepMax)));
-                ohp5Btn.setText(String.format("%s\nx7", (int) weightCalc.calculateOhp5(oneRepMax)));
-                ohp6Btn.setText(String.format("%s\nx4", (int) weightCalc.calculateOhp6(oneRepMax)));
-                ohp7Btn.setText(String.format("%s\nx6", (int) weightCalc.calculateOhp7(oneRepMax)));
-                ohp8Btn.setText(String.format("%s\nx8", (int) weightCalc.calculateOhp8(oneRepMax)));
-            }
-            else {
-
-                ohp1Btn.setText(String.format("%s\nx6", weightCalc.calculateOhp1(oneRepMax)));
-                ohp2Btn.setText(String.format("%s\nx5", weightCalc.calculateOhp2(oneRepMax)));
-                ohp3Btn.setText(String.format("%s\nx3", weightCalc.calculateOhp3(oneRepMax)));
-                ohp4Btn.setText(String.format("%s\nx5", weightCalc.calculateOhp4(oneRepMax)));
-                ohp5Btn.setText(String.format("%s\nx7", weightCalc.calculateOhp5(oneRepMax)));
-                ohp6Btn.setText(String.format("%s\nx4", weightCalc.calculateOhp6(oneRepMax)));
-                ohp7Btn.setText(String.format("%s\nx6", weightCalc.calculateOhp7(oneRepMax)));
-                ohp8Btn.setText(String.format("%s\nx8", weightCalc.calculateOhp8(oneRepMax)));
-            }
-
+            ohp1Btn.setText(String.format("%s\nx6",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.50), isKg)));
+            ohp2Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.60), isKg)));
+            ohp3Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
+            ohp4Btn.setText(String.format("%s\nx5",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
+            ohp5Btn.setText(String.format("%s\nx7",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
+            ohp6Btn.setText(String.format("%s\nx4",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
+            ohp7Btn.setText(String.format("%s\nx6",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
+            ohp8Btn.setText(String.format("%s\nx8",  formatWeight(weightCalc.calculateWeight(oneRepMax, 0.70), isKg)));
         }
     }
 
@@ -210,5 +187,12 @@ public class MondayActivity extends AppCompatActivity {
         sharedPrefEditor.putString(getString(R.string.ohp1RMStr), ohpRepMax);
         sharedPrefEditor.apply();
         sharedPrefEditor.commit();
+    }
+
+    public void getWeightUnitFromSharedPrefs() {
+        SharedPreferences sharedPrefs = getSharedPreferences(getString(R.string.generalPrefKey), 0);
+        if (sharedPrefs != null) {
+            this.isKg = sharedPrefs.getBoolean(getString(R.string.isKGStr), false);
+        }
     }
 }

@@ -36,6 +36,11 @@ public class AssistanceAdder {
                 ActionBar.LayoutParams.MATCH_PARENT,
                 1.0f
         );
+        LinearLayout.LayoutParams removeBtnParams = new LinearLayout.LayoutParams(
+                ActionBar.LayoutParams.WRAP_CONTENT,
+                ActionBar.LayoutParams.WRAP_CONTENT,
+                1.0f
+        );
 
 
         CardView assistanceCardView = new CardView(context);
@@ -69,9 +74,14 @@ public class AssistanceAdder {
         }
 
         Button removeButton = new Button(context);
+        removeButton.setText("remove");
+        removeButton.setTextSize(8);
+        removeButton.setLayoutParams(removeBtnParams);
+
         LinearLayout verticleButtonLayout = new LinearLayout(context);
         verticleButtonLayout.setOrientation(LinearLayout.VERTICAL);
         verticleButtonLayout.setLayoutParams(param);
+        verticleButtonLayout.addView(removeButton);
         horizontalCardLayout.addView(verticleButtonLayout);
 
         assistanceCardView.addView(horizontalCardLayout);

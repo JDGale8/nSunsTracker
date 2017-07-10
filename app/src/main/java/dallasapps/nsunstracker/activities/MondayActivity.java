@@ -9,6 +9,7 @@ import android.support.v7.widget.CardView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -44,6 +45,7 @@ public class MondayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_monday);
 
         final Vibrator vibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         // INITIATE BUTTONS
         final Button addAccessoryBtn = (Button) findViewById(R.id.addAccessoryBtn);

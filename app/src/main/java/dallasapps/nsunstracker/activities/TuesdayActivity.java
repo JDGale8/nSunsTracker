@@ -42,7 +42,7 @@ public class TuesdayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_monday);
+        setContentView(R.layout.activity_tuesday);
 
         final Vibrator vibr = (Vibrator) getSystemService(VIBRATOR_SERVICE);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);

@@ -12,6 +12,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activities.MondayActivity">
         </activity>
+        <activity android:name=".activities.TuesdayActivity">
+        </activity>
+
+
         <activity android:name=".activities.MainPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

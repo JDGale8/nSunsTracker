@@ -67,7 +67,7 @@ public class MainPage extends AppCompatActivity {
         startWorkoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent mondayActivityIntent = new Intent(MainPage.this, MondayActivity.class);
+                Intent mondayActivityIntent = new Intent(MainPage.this, TuesdayActivity.class);
                 startActivity(mondayActivityIntent);
                 vibr.vibrate(28);
             }

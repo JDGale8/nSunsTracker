@@ -33,62 +33,13 @@ public class WeightCalculator {
     }
 
     public double calculateWeight(double oneRepMax, double factor) {
-        double retval = Math.round(oneRepMax *  0.65 / roundingFactor) * roundingFactor;
+        double retval = Math.round(oneRepMax *  factor / roundingFactor) * roundingFactor;
         if (retval > 999) {
             return 999;
         }
         else {
             return retval;
         }
-    }
-    public double calculateBench2(double oneRepMax) {
-        return Math.round(oneRepMax *  0.75 / roundingFactor) * roundingFactor;
-    }
-    public double calculateBench3(double oneRepMax) {
-        return Math.round(oneRepMax *  0.85 / roundingFactor) * roundingFactor;
-    }
-    public double calculateBench4(double oneRepMax) {
-        return Math.round(oneRepMax *  0.85 / roundingFactor) * roundingFactor;
-    }
-    public double calculateBench5(double oneRepMax) {
-        return Math.round(oneRepMax *  0.85 / roundingFactor) * roundingFactor;
-    }
-    public double calculateBench6(double oneRepMax) {
-        return Math.round(oneRepMax *  0.8 / roundingFactor) * roundingFactor;
-    }
-    public double calculateBench7(double oneRepMax) {
-        return Math.round(oneRepMax *  0.75 / roundingFactor) * roundingFactor;
-    }
-    public double calculateBench8(double oneRepMax) {
-        return Math.round(oneRepMax *  0.7 / roundingFactor) * roundingFactor;
-    }
-    public double calculateBench9(double oneRepMax) {
-        return Math.round(oneRepMax *  0.65 / roundingFactor) * roundingFactor;
-    }
-    
-    public double calculateOhp1(double oneRepMax) {
-        return Math.round(oneRepMax *  0.5 / roundingFactor) * roundingFactor;
-    }
-    public double calculateOhp2(double oneRepMax) {
-        return Math.round(oneRepMax *  0.6 / roundingFactor) * roundingFactor;
-    }
-    public double calculateOhp3(double oneRepMax) {
-        return Math.round(oneRepMax *  0.7 / roundingFactor) * roundingFactor;
-    }
-    public double calculateOhp4(double oneRepMax) {
-        return Math.round(oneRepMax *  0.7 / roundingFactor) * roundingFactor;
-    }
-    public double calculateOhp5(double oneRepMax) {
-        return Math.round(oneRepMax *  0.7 / roundingFactor) * roundingFactor;
-    }
-    public double calculateOhp6(double oneRepMax) {
-        return Math.round(oneRepMax *  0.7 / roundingFactor) * roundingFactor;
-    }
-    public double calculateOhp7(double oneRepMax) {
-        return Math.round(oneRepMax *  0.7 / roundingFactor) * roundingFactor;
-    }
-    public double calculateOhp8(double oneRepMax) {
-        return Math.round(oneRepMax *  0.7 / roundingFactor) * roundingFactor;
     }
 
 }

@@ -177,28 +177,28 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx8" />
+                        android:text="--\nx5" />
 
                     <Button
                         android:id="@+id/squat2Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx6" />
+                        android:text="--\nx3" />
 
                     <Button
                         android:id="@+id/squat3Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx4" />
+                        android:text="--\nx1+" />
 
                     <Button
                         android:id="@+id/squat4Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx4" />
+                        android:text="--\nx3" />
 
                 </LinearLayout>
 
@@ -213,7 +213,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx4" />
+                        android:text="--\nx3" />
 
                     <Button
                         android:id="@+id/squat6Btn"
@@ -221,21 +221,21 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
-                        android:text="--\nx5" />
+                        android:text="--\nx3" />
 
                     <Button
                         android:id="@+id/squat7Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx6" />
+                        android:text="--\nx5" />
 
                     <Button
                         android:id="@+id/squat8Btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="--\nx7"  />
+                        android:text="--\nx5"  />
 
                 </LinearLayout>
 
@@ -246,7 +246,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="--\nx8+" />
+                android:text="--\nx5+" />
         </LinearLayout>
 
         <!-- OVERHEAD PRESS -->
